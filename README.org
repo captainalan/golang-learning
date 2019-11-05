@@ -1,3 +1,16 @@
-#+TITLE: Golang Learning
-* This repository
-  Just learning how to use golang. 
+* Golang Learning
+** This repository
+   Just learning how to use golang. Here I document my journey.
+  
+   How will org mode display on Github? Hmm.
+** Links and Resources
+*** Programming problems
+    There are many practice problems freely available online. Some can be
+    used with any language.
+
+ - https://www.reddit.com/r/dailyprogrammer/
+
+*** Golang resources
+    Of course there are the official docs
+**** Getting started
+     - [[http://www.xahlee.info/golang/golang_index.html][Golang tutorial]] by Xah Lee
