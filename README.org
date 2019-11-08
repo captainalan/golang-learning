@@ -1,10 +1,13 @@
 * Golang Learning
 ** This repository
-   Just learning how to use golang. Here I document my journey.
+   Just learning how to use Golang. Here I document my journey.
   
    How will org mode display on Github? Hmm.
 ** Links and Resources
 *** Programming problems
+    Many programs here are just implementations of common algorithms
+    from pseudocode. Getting a feel for arrays and stuff in Golang.
+
     There are many practice problems freely available online. Some can be
     used with any language.
 
