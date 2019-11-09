@@ -3,3 +3,7 @@
 
 # Executables
 *.exe
+
+# Temporary and informal testing files
+foo/
+temp*
