@@ -17,6 +17,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"time"
 )
 
 /* Using 'initial + rhyme" strategy means longer lists of syllables, but offloads logic
@@ -37,11 +38,8 @@ var initials = [MAX_LENGTH]string{ "b", "s", "d", "f", "g", "h", "j", "k", "l", 
 var rhymes = [MAX_LENGTH]string{ "at", "et", "it", "ut", "ought", "ood", "oop", "ilk", "urk", "uck", "unk", "iff", "urf", "onk", "ack", "erm", "ee","ing" ,"ar" , "oo" } 
 
 func main() {
-	rand.Seed(101) // Pick a number u lyke
-
-
-	// Choose how many syllables to generate
-	// TODO make this statistically informed
+	rand.Seed(time.Now().UTC().UnixNano())
+	// rand.Seed(101) // Pick a number u lyke
 
 	argsWithoutProg := os.Args[1:]
 
@@ -60,9 +58,6 @@ func main() {
 		
 	    }
 	}
-
-	// fmt.Println(GenerateWord())
-
 }
 
 func GenerateSyllable () Syllable {
@@ -76,12 +71,12 @@ func GenerateSyllable () Syllable {
 }
 
 func GenerateWord () string {
-
 	// Decide number of syllables
 	ran_dumb := rand.Float64()
 	num_syllables := -1;  // Initialize
 
 	// ...arbitrarily setting some weights...
+	// TODO make this statistically informed
 	if (ran_dumb <= 0.05) {
 		num_syllables = 4
 	} else if (ran_dumb <= 0.2) {
