@@ -4,10 +4,10 @@ import "fmt"
 
 /* 
 TODO
-- Implement (right) reduce
 - Rather than just using ints, use interfaces or something to accept more
   generic types with these functions
 */
+
 func add_function_maker(n int) func(int) int{
 	return func(m int) int{
 		return m + n;
@@ -40,6 +40,14 @@ func my_filter(my_predicate func(int) bool, my_list []int) []int {
 	return to_return[:current_position];
 }
 
+func my_foldr(my_func func(int, int) int, my_slice []int, n int) int {
+	acc := n // "accumulator"
+	for i := 0; i < len(my_slice); i++ {
+		acc = my_func(acc, my_slice[i])
+	}
+	return acc
+}
+
 const ARR_SIZE = 10
 
 func main() {
@@ -67,5 +75,12 @@ func main() {
 	// Filter it!
 	evens := my_filter(evenp, my_arr[:])
 	fmt.Println("...and mapped this to a slice of our original array.", evens)
+	
+	// Trying out foldr function
+	var my_add func(int, int) int = func(a int, b int)  int {
+		return a + b
+	}
+	folded := my_foldr(my_add, my_arr[:], 0)
+	fmt.Println("folding a slice", folded)
 }
 
